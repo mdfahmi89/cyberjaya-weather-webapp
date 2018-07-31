@@ -12,9 +12,11 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./cities.component.css']
 })
 export class CitiesComponent {
-  title = 'City Weather';
+  title = 'Cyberjaya Weather Webapp';
 
   private apiUrl = 'https://api.openweathermap.org/data/2.5/group?id=6697380&units=metric&appid=110ff02ed24ccd819801248373c3b208';
+  //private apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=110ff02ed24ccd819801248373c3b208';
+  
   data: any = {};
 
   constructor(private http: Http) {

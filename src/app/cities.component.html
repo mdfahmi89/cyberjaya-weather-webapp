@@ -1,3 +1,5 @@
+<body>
+
 <!-- Template for the cities component -->
 <div style="text-align:center">
   <h1>
@@ -5,28 +7,40 @@
   </h1>
   <img width="300" src="assets/img/city.jpg">
 </div>
-<search></search>
-<div class="container">
-  <h2>City list</h2>
-  <p>Click on the city name to get extended forecast</p>            
+<!-- <search></search> -->
+<div class="container" style="text-align:center">
+  <h2>Current Weather</h2>
+  <p>Click on the city name to get extended forecast</p>  
+  <br>  
   <div>
     <table id="citiesTable" class="table">
       <thead>
-        <tr>
+        <tr align="center">
           <th>City name</th>
-          <th>Average temperature (C)</th>
-          <th>Average wind strength (m/s)</th>
+          <th>Forecast</th>
+          <th>Temperature (C)</th>
+		  <th>Wind Speed (m/s)</th>
+		  <th>Pressure (hPa)</th>
+		  <th>Humidity (%)</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let city of data.list">
-          <td class="forecast-info-main"><img src="https://openweathermap.org/img/w/{{city.weather[0].icon}}.png" class="forecast-icon" alt="forecast"><a [routerLink]="['/city', city.id]">{{city.name}}</a></td>
-          <td class="forecast-info">{{city.main.temp}}</td>
-          <td class="forecast-info-sec">{{city.wind.speed}}</td>
+          <td class="forecast-info-main" width="30%"><a [routerLink]="['/city', city.id]">Cyberjaya</a></td>
+          <td class="forecast-info-main" width="10%"><img src="https://openweathermap.org/img/w/{{city.weather[0].icon}}.png" class="forecast-icon" alt="forecast"><br><font color="#FFFFFF">{{city.weather[0].description}}</font></td>
+		  <td class="forecast-info-main" width="15%">{{city.main.temp}}</td>
+          <td class="forecast-info-main" width="15%">{{city.wind.speed}}</td>
+		  <td class="forecast-info-main" width="15%">{{city.main.pressure}}</td>
+		  <td class="forecast-info-main" width="15%">{{city.main.humidity}}</td>
         </tr>
       </tbody>
     </table>
   </div>
+  <br>
+  <p>Created By</p>  
+  <h2>Mohd Fahmi Bin Mohd Shari</h2>
+
+  
 </div>
 
-
+</body>

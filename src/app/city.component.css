@@ -1,10 +1,18 @@
 /* styles for the citiy component */
-h1 {
-    color: #2a6c8f;
+body {
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
 }
 
-h2, p {
-    color: #47a3ca;
+h1 {
+    color: #FF0004;
+}
+
+h2 {
+    color: #49a2cc;
+}
+
+p {
+    color: #F53D40;
 }
 
 .forecast-icon {
@@ -14,6 +22,7 @@ h2, p {
 .table>thead>tr>th {
     font-size: 17px;
     color: #e29c2c;
+    border: solid 2px;
 }
 
 .table>tbody>tr>td {
@@ -27,11 +36,11 @@ h2, p {
 }
 
 .forecast-0 {
-    background-color: #af9e82;
+    background-color: #c4b193;
 }
 
 .forecast-1 {
-    background-color: #b8a68a;
+    background-color: #c4b193;
 }
 
 .forecast-2 {
@@ -39,14 +48,13 @@ h2, p {
 }
 
 .forecast-3 {
-    background-color: #d0bd9e;
+    background-color: #c4b193;
 }
 
 .forecast-4 {
-    background-color: #e0ccad;
-    text-align: left;
+    background-color: #c4b193;
 }
 
 .forecast-5 {
-    background-color: #e2c9a2;
+    background-color: #c4b193;
 }
