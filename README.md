@@ -2,7 +2,7 @@
 
 ## A simple Angular 4 app, showing weather forecast in the cities
 
-![Alt text](assets/img/cyberjaya-weather-webapp.JPG?raw=true "App Printscreen")
+![Alt text](src/assets/img/cyberjaya-weather-webapp.JPG?raw=true "App Printscreen")
 
 "Cyberjaya Weather Webapp" is a:
 1.  Simple weather forecast app, created in Angular 4.
