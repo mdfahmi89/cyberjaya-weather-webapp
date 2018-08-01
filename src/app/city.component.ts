@@ -8,10 +8,16 @@ import { Http, Response } from "@angular/http";
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
 
+
+
 @Component({
   selector: 'city',
   templateUrl: './city.component.html',
-  styleUrls: ['./city.component.css']
+  styleUrls: ['./bower_components/font-awesome/css/font-awesome.min.css',
+  './bower_components/Ionicons/css/ionicons.min.css',
+  './bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css',
+  './dist/css/AdminLTE.min.css',
+  './dist/css/skins/_all-skins.min.css']
 })
 export class CityComponent {
 
@@ -29,6 +35,9 @@ export class CityComponent {
         this.getCityData();
     }
 
+
+	
+	
     getCityForecast(cityId) {
         console.log(cityId);
         this.apiCityUrl = 'https://api.openweathermap.org/data/2.5/forecast?id=' + cityId + '&units=metric&appid=110ff02ed24ccd819801248373c3b208';
@@ -51,6 +60,8 @@ export class CityComponent {
         this.location.back();
     }
 
+
+	
 }
 
 

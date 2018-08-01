@@ -6,16 +6,16 @@ import { Http, Response } from "@angular/http";
 
 import 'rxjs/add/operator/map';
 
+
 @Component({
   selector: 'cities',
   templateUrl: './cities.component.html',
-  styleUrls: ['./bower_components/bootstrap/dist/css/bootstrap.min.css',
-  './bower_components/font-awesome/css/font-awesome.min.css',
+  styleUrls: ['./bower_components/font-awesome/css/font-awesome.min.css',
   './bower_components/Ionicons/css/ionicons.min.css',
   './dist/css/AdminLTE.min.css',
   './dist/css/skins/_all-skins.min.css']
 })
-export class CitiesComponent {
+export class CitiesComponent{
   title = 'Cyberjaya Weather Webapp';
 
   private apiUrl = 'https://api.openweathermap.org/data/2.5/group?id=6697380&units=metric&appid=110ff02ed24ccd819801248373c3b208';
@@ -28,7 +28,7 @@ export class CitiesComponent {
     this.getTest();
     this.getData();
   }
-
+  
   getData() {
     return this.http.get(this.apiUrl)
       .map((res: Response) => res.json())

@@ -1,49 +1,132 @@
-<body>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Cyberjaya Weather App</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-<!-- Template for the city component -->
-<div style="text-align:center">
-  <h1>
-    City forecast in the next hours
-  </h1>
-  <p>Extended forecast for every 3 hours in the next 5 days</p>
-</div>
-<div id="map">
+
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+			<a href="#" class="navbar-brand"><b>Cyberjaya Weather Webapp</b></a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li ><a href="https://github.com/mdfahmi89/weather-webapp1">Repository <span class="sr-only">(current)</span></a></li>
+            <li ><a href="https://github.com/mdfahmi89">My Github <span class="sr-only">(current)</span></a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+
   
-</div>
-<div id="cityCont" class="container">
-<div style="text-align:left">
-    <h2 *ngIf="dataCity.city">
+		  
+		  
+		  
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <!-- Full Width Column -->
+  <div class="content-wrapper">
+    <div class="container">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+          
+       <div style="text-align: center;">
+        <h1 *ngIf="dataCity.city">
+          City forecast in the next hours:&nbsp; 
+
       <img src="https://openweathermap.org/img/w/{{dataCity.list[0].weather[0].icon}}.png" class="forecast-icon" alt="forecast">
       {{dataCity.list[0].weather[0].description}} in Cyberjaya, {{dataCity.city.country}}
-	      <button (click)="goBack()" class="btn btn-primary">GoBack</button>
-    </h2>  
-</div>  
-    <div>
-      <table class="table">
-        <thead>
-          <tr>
-            <th style="text-align:center">At (date-time)</th>
-            <th style="text-align:center">Temperature min/max (C)</th>
-            <th style="text-align:center">Pressure</th>
-            <th style="text-align:center">Humidity</th>
-            <th style="text-align:center">Forecast</th>
-            <th style="text-align:center">Description</th>
-            <th style="text-align:center">Wind speed (m/s)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let cityForecast of dataCity.list">
-            <td class="forecast-info forecast-0">{{cityForecast.dt_txt}}</td>
-            <td class="forecast-info forecast-1">{{cityForecast.main.temp_min}} / {{cityForecast.main.temp_max}}</td>
-            <td class="forecast-info forecast-2">{{cityForecast.main.pressure}}</td>
-            <td class="forecast-info forecast-3">{{cityForecast.main.humidity}}</td>
-            <td class="forecast-info forecast-4" style="text-align:center"><img src="https://openweathermap.org/img/w/{{cityForecast.weather[0].icon}}.png" class="forecast-icon" alt="forecast"></td>
-            <td class="forecast-info forecast-4" style="text-align:center">{{cityForecast.weather[0].description}}</td>
-            <td class="forecast-info forecast-5">{{cityForecast.wind.speed}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-</div>
+        </h1>     
+           
+       </div>
 
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+
+	   <div class="row">	
+		<div class="col-md-12">   
+
+          <div class="box box-primary">
+            <div class="box-header">
+              <h3 class="box-title">Extended Forecast For Every 3 Hours In The Next 5 Days</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th style="text-align:center">At (date-time)</th>
+                  <th style="text-align:center">Temperature min/max (C)</th>
+                  <th style="text-align:center">Pressure</th>
+                  <th style="text-align:center">Humidity</th>
+                  <th style="text-align:center">Forecast</th>
+                  <th style="text-align:center">Description</th>
+                  <th style="text-align:center">Wind speed (m/s)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let cityForecast of dataCity.list">
+                  <td align="center">{{cityForecast.dt_txt}}</td>
+                  <td align="center">{{cityForecast.main.temp_min}} / {{cityForecast.main.temp_max}}</td>
+                  <td align="center">{{cityForecast.main.pressure}}</td>
+                  <td align="center">{{cityForecast.main.humidity}}</td>
+                  <td align="center"><img src="https://openweathermap.org/img/w/{{cityForecast.weather[0].icon}}.png" alt="forecast" width="40px" height="40px"></td>
+                  <td align="center">{{cityForecast.weather[0].description}}</td>    
+                  <td align="center">{{cityForecast.wind.speed}}</td>        
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->            
+            
+        </div>
+        <!-- /.col --> 
+      </div>
+      <!-- /.row -->
+	  	  
+		  
+		  
+		  
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="pull-right hidden-xs">
+        <b>Version</b> 1.0.0
+      </div>
+      <strong>Copyright &copy; 2018 <a href="https://mdfahmi89.github.io">Mohd Fahmi Mohd Shari</a>.</strong> All rights
+      reserved.
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+<!-- ./wrapper -->
+ 
 </body>
+</html>

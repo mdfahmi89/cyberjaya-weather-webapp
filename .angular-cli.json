@@ -21,7 +21,13 @@
       "styles": [
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": ["../node_modules/jquery/dist/jquery.min.js",
+	  "../node_modules/jquery/dist/bootstrap.min.js",
+	  "../node_modules/jquery/dist/jquery.dataTables.min.js",
+	  "../node_modules/jquery/dist/dataTables.bootstrap.min.js",
+	  "../node_modules/jquery/dist/jquery.slimscroll.min.js",
+	  "../node_modules/jquery/dist/fastclick.js",
+	  "../node_modules/jquery/dist/adminlte.min.js"],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
